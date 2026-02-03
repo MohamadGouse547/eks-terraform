@@ -6,7 +6,6 @@ module "eks" {
   private_subnets    = data.aws_subnets.private.ids
   office_sg_id       = data.aws_security_group.office_ips.id
   ssh_key_name       = var.ssh_key_name
-  terraform_role_arn = var.terraform_role_arn
 }
 
 
@@ -18,5 +17,6 @@ module "karpenter" {
   oidc_provider_arn = module.eks.oidc_provider_arn
 
 }
+
 
 
